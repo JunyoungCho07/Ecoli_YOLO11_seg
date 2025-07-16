@@ -1,0 +1,26 @@
+name: yolov11-seg-env
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - opencv
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8 
+  - onnx = 1.14.1
+  - onnx-runtime
+  - pip:
+      - ultralytics==8.1.22  # YOLOv11은 YOLOv8 이후로 통합된 ultralytics 패키지 사용
+      - tqdm
+      - seaborn
+      - scikit-learn
+      - pycocotools
