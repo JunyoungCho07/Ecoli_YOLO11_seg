@@ -1,0 +1,13 @@
+데이터 — CVAT → YOLO Detection 1.0, Stratified Split, 통계 점검
+
+모델·하이퍼파라미터 — yolo11s.pt, imgsz 640, AdamW, epochs 60‑120
+
+증강 — Mosaic+MixUp(경미), 컬러 증강 최소화
+
+두 단계 전이학습 — AGAR 사전학습 → 우리 데이터 파인튜닝
+
+평가 — mAP + 카운트 MAE, 작은 객체 mAP 별도 모니터링
+
+배포 — TensorRT/ONNX export, SAHI 옵션 준비
+
+재현성 — seed 고정, 프로젝트·run 이름 관리, requirements.txt 체크
