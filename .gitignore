@@ -210,3 +210,7 @@ __marimo__/
 data/
 images/
 labels/
+predictions/
+runs/
+yolo11n.pt
+yolo11s.pt

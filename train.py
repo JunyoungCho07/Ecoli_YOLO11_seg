@@ -56,13 +56,21 @@ if __name__ == '__main__':
 
     # 3) 학습 실행
     model.train(
-        data="dataset.yaml",
-        epochs=100,
+        data="C:/Users/cho-j/OneDrive/바탕 화면/Ecoli_YOLO11_det/data/data.yaml",
+        epochs=50,
         imgsz=1024,
         batch=-1,         # 60 % VRAM 자동
         device=0,
         close_mosaic=10,
-        hyp=hyp,
+        augment=True,
+        mosaic=1.0,
+        mixup=0.15,
+        hsv_h=0.015, 
+        hsv_s=0.7, 
+        hsv_v=0.4,
+        fliplr=0.5,
+        translate=0.1, 
+        scale=0.5,
         project="runs/train",
         name="gb4_exp1",
     )
