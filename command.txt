@@ -1,0 +1,5 @@
+# 환경 생성
+conda env create -f environment.yml
+
+# 활성화
+conda activate yolov11
