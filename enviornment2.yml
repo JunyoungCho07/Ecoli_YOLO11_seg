@@ -1,3 +1,4 @@
+#detection model
 name: yolov11
 channels:
   # 우선순위: PyTorch → NVIDIA → conda‑forge
