@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     # 추가 학습 (continue training)
     model.train(
-        data='C:/Users/cho-j/OneDrive/바탕 화면/Ecoli_YOLO11_det/data/data.yaml',
+        data='C:/Users/cho-j/OneDrive/바탕 화면/data2nd/data.yaml',
         epochs=20,              # 추가로 학습할 epoch 수 (기존 학습과 합쳐지지 않음!)
         batch=8,
         imgsz=256,

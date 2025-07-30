@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
     # 3) 학습 실행
     model.train(
-        data="C:/Users/cho-j/OneDrive/바탕 화면/Ecoli_YOLO11_det/data/data.yaml",
+        data="C:/Users/cho-j/OneDrive/바탕 화면/data2nd/data.yaml",
         epochs=50,
         imgsz=1024,
         batch=-1,         # 60 % VRAM 자동
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         translate=0.1, 
         scale=0.5,
         project="runs/train",
-        name="gb4_exp1",
+        name="gb4_exp2",
     )
 
 # 기대 데이터 확대 배수

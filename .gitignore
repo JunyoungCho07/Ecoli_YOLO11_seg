@@ -211,6 +211,7 @@ data/
 images/
 labels/
 predictions/
+predictions2/
 runs/
 runs2/
 yolo11n.pt
