@@ -205,6 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+<<<<<<< HEAD
 
 #edited
 data/
@@ -214,8 +215,8 @@ predictions/
 predictions2/
 runs/
 runs2/
-yolo11n.pt
-yolo11s.pt
-yolo11m.pt
-yolo11l.pt
-yolo11x.pt
+yolo11n-seg.pt
+yolo11s-seg.pt
+yolo11m-seg.pt
+yolo11l-seg.pt
+yolo11x-seg.pt
