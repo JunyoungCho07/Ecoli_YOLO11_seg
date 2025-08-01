@@ -37,36 +37,68 @@
 
 
 
+# from ultralytics import YOLO
+# import multiprocessing
+
+# if __name__ == '__main__':
+#     multiprocessing.freeze_support()
+#     # 1) 모델 로드
+#     model = YOLO("yolo11s.pt")
+
+
+
+#     # 3) 학습 실행
+#     model.train(
+#         data="C:/Users/cho-j/OneDrive/바탕 화면/data2nd/data.yaml",
+#         epochs=50,
+#         imgsz=1024,
+#         batch=-1,         # 60 % VRAM 자동
+#         device=0,
+#         close_mosaic=10,
+#         augment=True,
+#         mosaic=1.0,
+#         mixup=0.15,
+#         hsv_h=0.015, 
+#         hsv_s=0.7, 
+#         hsv_v=0.4,
+#         fliplr=0.5,
+#         translate=0.1, 
+#         scale=0.5,
+#         project="runs/train",
+#         name="gb4_exp2",
+#     )
+
 from ultralytics import YOLO
 import multiprocessing
 
 if __name__ == '__main__':
     multiprocessing.freeze_support()
-    # 1) 모델 로드
-    model = YOLO("yolo11s.pt")
 
+    # 1) 세그멘테이션 모델 로드 (전이학습 기반)
+    model = YOLO("yolo11s-seg.pt", task='segment')
 
-
-    # 3) 학습 실행
+    # 2) 모델 학습 실행
     model.train(
+        task='segment',  # 세그멘테이션 명시
         data="C:/Users/cho-j/OneDrive/바탕 화면/data2nd/data.yaml",
         epochs=50,
         imgsz=1024,
-        batch=-1,         # 60 % VRAM 자동
-        device=0,
-        close_mosaic=10,
+        batch=-1,          # VRAM 자동 할당
+        device=0,          # CUDA 0번 사용
+        close_mosaic=10,   # 초기 mosaic augmentation 제어
         augment=True,
         mosaic=1.0,
         mixup=0.15,
-        hsv_h=0.015, 
-        hsv_s=0.7, 
+        hsv_h=0.015,
+        hsv_s=0.7,
         hsv_v=0.4,
         fliplr=0.5,
-        translate=0.1, 
+        translate=0.1,
         scale=0.5,
         project="runs/train",
-        name="gb4_exp2",
+        name="seg_exp2",  # 실험 이름 변경
     )
+
 
 # 기대 데이터 확대 배수
 
